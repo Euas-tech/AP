@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finteres</title>
+    <%- include("partials/head")%><!--Llama B4-->
+    
+</head>
+    
+<body>
+    <%-include("partials/navigation")%>
+    <div class="container p-4">
+        <div class="row">
+            <div class="card-columns"><!--Columnas tipo pinterest-->
+                
+                    <div class="card animated fadeInDown">
+                        <img src="<%= image.path%>" class="card-img-top">
+                        <div class="card_body">
+                            <!--INFORMACION DE PUBLICACION-->
+                            <!--TITULO-->
+                            <h5 class="card-title"><%=image.title%></h5>
+                            <!--DESCRIPCION-->
+                            <p class="card-text"><%=image.description%></p>
+                            <!--FECHA DE CREACIÓN-->
+                            <p class="card-text"><%=format(image.created_at)%></p>
+                            <!--enlace principal de cada imagen-->
+                            <a href="/image/<%=image._id%>/delete" class="btn btn-danger"> <!--Se hace con la id de la imagen-->
+                                Borrar
+                            </a>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

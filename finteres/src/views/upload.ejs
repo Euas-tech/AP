@@ -1,0 +1,49 @@
+<!--encargado del formulario de carga-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subida de imagenes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+
+
+
+</head>
+<body>
+    <%-include("partials/navigation")%>
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="card">
+                    <div class="card_body">
+                        <form action="/upload" method="POST" enctype="multipart/form-data"><!--Accion se anda a ruta post upload -->
+                        
+                            <div class="input-group mb-3"><!--Selecionar archivo -->
+                                <input type="file" name="image" class="form-control" id="inputGroupFile02">
+                                <label class="input-group-text" for="inputGroupFile02">Browse</label>
+                            </div>
+                            <!--<input type="text" name="title" placeholder="Title">-->
+                            <!--<input type="file" name="image">--><!--Se relaciona con el multer-->
+                            <div class="form-group"><!--Titulo de la imagen -->
+                                <input type="text" name="title" placeholder="Title" class="form-control">
+                            </div>
+                            <div class="form-group"><!--descripcion de la imagen -->
+                                <textarea name="description" class="form-control">
+
+                                </textarea>
+                            </div>
+                            <div class="form-group"><!--Boton encargado del evento del formulario -->
+                                <button type="submit" class="btn btn-success btn-block w-100">
+                                    Upload
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
